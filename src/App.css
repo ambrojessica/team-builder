@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+/* form */
+.labels {
+  font-size: 25px;
+  padding: 10%;
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email, .role, .submit {
+  padding: 3%;
+}
+
+button {
+  padding: 15%;
+  background-color: aliceblue;
+}
+
+button:hover {
+  background-color: #61dafb;
+}
+
+
+

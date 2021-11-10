@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css';
 
 const Form = (props) => {
   // const { values, update, submit } = props
@@ -15,10 +16,11 @@ const Form = (props) => {
   }
 
   return (
-    <form className='form container' onSubmit={onSubmit}>
-      <div>
-        <label>Name:
-        <input 
+    <form className='form' onSubmit={onSubmit}>
+      <div className='container'>
+      <div className='labels'>
+        <label className='name'>Name:
+        <input
         type='text'
         name='name'
         value={props.values.name}
@@ -26,7 +28,7 @@ const Form = (props) => {
         />
         </label>
 
-        <label>Email:
+        <label className='email'>Email:
         <input 
         type='email'
         name='email'
@@ -36,7 +38,7 @@ const Form = (props) => {
         </label>
 
         <label>
-          <select value={props.values.role} name='role' onChange={onChange}>
+          <select value={props.values.role} name='role' onChange={onChange}  className='role'>
             <option value=''> --Select Role--</option>
             <option value='Frontend Engineer'>Frontend Engineer</option>
             <option value='Backend Engineer'>Backend Engineer</option>
@@ -45,6 +47,7 @@ const Form = (props) => {
         </label>
         <div className='submit'>
           <button>SUBMIT</button>
+        </div>
         </div>
       </div>
     </form>
