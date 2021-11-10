@@ -24,8 +24,8 @@ const Form = (props) => {
         value={props.values.name}
         onChange={onChange}
         />
-
         </label>
+
         <label>Email:
         <input 
         type='email'
