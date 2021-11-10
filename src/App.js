@@ -6,37 +6,39 @@ import Form from './Form';
 // import axios from 'axios';
 
 
-const intialFormValues = {
-  name: '',
-  email: '',
-  role: '',
-}
-
-
 function App() {
-  const [form, setForm] = useState([])
-  const[formValues, setFormValues] = useState(intialFormValues)
+  const [form, setForm] = useState([]);
+  const[formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    role: '',
+  });
 
-  const updateForm = (inputName, inputValue) => {
-    setFormValues({ ...formValues, [inputName]: inputValue });
+  const updateForm = (name, value) => {
+    setFormValues({ ...formValues, [name]: value });
   }
   
   const submitForm = () => {
-    const newFriend = {
-      name: formValues.name,
-      email: formValues.email,
-      role: formValues.role
-    }
+    setForm([formValues, ...form]);
+    setFormValues({name:'', email:'', role:''});
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>Join Our NEW React Class</h1>
         <Form
         values={formValues}
-        update={updateForm}
+        change={updateForm}
         submit={submitForm} />
+        {form.map((user, ind)=> {
+          return (
+          <div key={ind}>
+            {user.name}, {user.email}, {user.role}
+          </div>
+          )
+        })}
       </header>
     </div>
   );
